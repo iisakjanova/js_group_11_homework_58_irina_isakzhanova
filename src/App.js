@@ -1,5 +1,9 @@
+import Main from "./containers/Main/Main";
+
 const App = () => (
-    <div className="App"></div>
+    <div className="App">
+        <Main />
+    </div>
 );
 
 export default App;

@@ -1,5 +1,3 @@
-import {nanoid} from "nanoid";
-
 import React from 'react';
 import './Modal.css';
 
@@ -33,7 +31,7 @@ const Modal = props => {
                 <div className="ModalFooter">
                     {props.buttons.map(btn => (
                         <Button
-                            key={nanoid()}
+                            key={`${btn.type}-modal-btn`}
                             type={btn.type}
                             onClick={btn.onClick}
                         >

@@ -17,7 +17,7 @@ const Main = () => {
         danger: false,
     });
 
-    const [showAlertNoXBtn, setShowAlertNoXBtn] = useState(false)
+    const [showAlertNoXBtn, setShowAlertNoXBtn] = useState(false);
 
     const handleShowModal = () => {
         setShowModal(true);
@@ -78,6 +78,7 @@ const Main = () => {
             </Modal>
             <h3>Alert</h3>
             <h5>With X button</h5>
+
             {Object.keys(showAlerts).map(key => (
                 <Button
                     key={`${key}-alert-btn`}
@@ -87,7 +88,6 @@ const Main = () => {
                     show demo {key} alert
                 </Button>
             ))}
-
 
             {Object.keys(showAlerts).map(key => (
                 showAlerts[key]
@@ -111,8 +111,11 @@ const Main = () => {
             >
                 show demo primary alert
             </Button>
+
             {showAlertNoXBtn && (
                 <Alert
+                    clickDismissable
+                    dismiss={() => setShowAlertNoXBtn(false)}
                     type='primary'
                 >
                     This is a primary type alert without X-btn
